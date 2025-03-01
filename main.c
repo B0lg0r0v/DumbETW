@@ -29,7 +29,6 @@ WCHAR					g_LoggerName[]		= L"DumbETWTraceSession";																	// Name of t
 static VOID WINAPI cEventRecordCallback(PEVENT_RECORD pEventRecord)
 {
 
-	/**/
 	ULONG				uBuffer						= 0,
 						uStatus						= 0;
 
@@ -39,13 +38,6 @@ static VOID WINAPI cEventRecordCallback(PEVENT_RECORD pEventRecord)
 						uUserDataLength				= pEventRecord->UserDataLength;
 	ULONG				uPointerSize				= (pEventRecord->EventHeader.Flags & EVENT_HEADER_FLAG_32_BIT_HEADER) ? 4 : 8;
 	PBYTE				pUserData					= (PBYTE)pEventRecord->UserData;
-	
-	/*
-	wprintf(L"--> Event Received: ID=%u, PID=%u, TID=%u\n",
-		pEventRecord->EventHeader.EventDescriptor.Id,
-		pEventRecord->EventHeader.ProcessId,
-		pEventRecord->EventHeader.ThreadId);
-	*/
 
 	// This will fail. Standard trick to get the needed size first
 	uStatus = TdhGetEventInformation(pEventRecord, NULL, NULL, NULL, &uBuffer);
@@ -144,17 +136,7 @@ static VOID WINAPI cEventRecordCallback(PEVENT_RECORD pEventRecord)
 	if (pEventInfo)
 		free(pEventInfo); 
 	
-	/*
-	// Simple example: Print basic event info
-	wprintf(L"--> Event Received: ID=%u, PID=%u, TID=%u\n",
-		pEventRecord->EventHeader.EventDescriptor.Id,
-		pEventRecord->EventHeader.ProcessId,
-		pEventRecord->EventHeader.ThreadId);
-	*/
-
-
 }
-
 
 DWORD WINAPI ConsumerThreadProc(PTRACEHANDLE lpParam)
 {
