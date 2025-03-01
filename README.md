@@ -12,7 +12,7 @@ If you want to test this out, you'll need to change at least ONE line in the sou
 
 You need to specify a valid path where to save the log file.
 
-You could also change the provider as you whish:
+You could also change the provider as you wish:
 
 ```c
 // Microsoft-Windows-Kernel-Process			  {22FB2CD6-0E7B-422B-A0C7-2FAD1FD0E716} 
