@@ -160,7 +160,6 @@ int main() {
 	PROCESSTRACE_HANDLE		phTrace			= NULL;
 	TRACEHANDLE				hSession		= NULL;
 	HANDLE					hThread			= NULL;
-	ULONGLONG				uProcessKeyword = 0x00000001;
 	
 	// Allocating enough size
 	EVENT_TRACE_PROPERTIES* etHeaderStruct	= (EVENT_TRACE_PROPERTIES*)malloc(szTotalSize);
