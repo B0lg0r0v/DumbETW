@@ -2,7 +2,6 @@
 #include <Windows.h>
 #include <evntrace.h>
 #include <tdh.h>
-#include <signal.h>
 
 // For the linker
 #pragma comment(lib, "tdh.lib")
