@@ -22,7 +22,7 @@ DWORD WINAPI ConsumerThreadProc(PTRACEHANDLE lpParam);
 
 const GUID				g_ProviderGuid		= { 0x2A576B87, 0x09A7, 0x520E, { 0xC2, 0x1A, 0x49, 0x42, 0xF0, 0x27, 0x1D, 0x67 } };		// GUID of the provider we want to use, which is currently set to "Microsoft-Antimalware-Scan-Interfaces"
 const GUID				g_GUID				= { 0xbee742bd, 0xcb04, 0x4a3f, 0x937d, 0x0eb7539e575c };									// Custom GUID for our trace session. Generated via powershell "[guid]::NewGuid()"
-WCHAR					g_LoggerName[]		= L"TestTraceSession2";																		// Name of the tracing session
+WCHAR					g_LoggerName[]		= L"DumbETWTraceSession";																	// Name of the tracing session
 
 // Callback invoked for each incoming event
 // Taken and modified from the book "Evading EDR" by Matt Hand
